@@ -1,6 +1,7 @@
 import { Transform, TransformFnParams } from "class-transformer"
 import { IsNotEmpty } from "class-validator"
 import { Column, Entity, OneToMany, PrimaryGeneratedColumn } from "typeorm"
+import { Produto } from "../../produto/entities/produto.entity"
 
 @Entity({ name: 'tb_categoria' })
 export class Categoria {
@@ -13,5 +14,6 @@ export class Categoria {
     @Column({length: 1000, nullable: false})
     nome: string
 
-    //Relacionamento abaixo
+    @OneToMany(() => Produto, (produto) => produto.categoria)
+    produto: Produto[]
 }
