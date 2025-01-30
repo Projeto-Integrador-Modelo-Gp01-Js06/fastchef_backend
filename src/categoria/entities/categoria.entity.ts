@@ -13,5 +13,6 @@ export class Categoria {
     @Column({length: 1000, nullable: false})
     nome: string
 
-    //Relacionamento abaixo
+    // @OneToMany(() => Produto, (produto) => produto.categoria)
+    // produto: Produto[];
 }
