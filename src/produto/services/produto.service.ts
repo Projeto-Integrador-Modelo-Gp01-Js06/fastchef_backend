@@ -94,4 +94,29 @@ export class ProdutoService {
         return await this.produtoRepository.delete(id);
 
     }
+
+    async calcularNutriScore(produto: Produto): Promise<Produto> {
+        // Calcula o Nutri-Score do produto antes de salvar
+        produto.nutriScore = this.calcularNutriScoreInterno(produto);
+    
+        // Salva o produto no banco de dados com o Nutri-Score calculado
+        return await this.produtoRepository.save(produto);
+    }
+    
+    private calcularNutriScoreInterno(produto: Produto): string {
+        let score = 0;
+    
+        // Regras básicas para cálculo do Nutri-Score
+        score += produto.calories > 500 ? 10 : 0;
+        score += produto.saturatedFat > 5 ? 10 : 0;
+        score += produto.sugar > 10 ? 10 : 0;
+        score += produto.sodium > 600 ? 10 : 0;
+    
+        // Classificação final baseada no score acumulado
+        if (score <= 3) return 'A';
+        if (score <= 10) return 'B';
+        if (score <= 20) return 'C';
+        if (score <= 30) return 'D';
+        return 'E';
+    }
 }

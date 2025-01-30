@@ -23,13 +23,24 @@ export class Produto {
     @Column({length: 500, nullable: false})
     foto: string
 
-    @IsPositive()
-    @IsNotEmpty()
-    @Column({type: 'decimal', nullable: false})
-    inf_nutricional: number
+    @Column('float')
+    calories: number;
+
+    @Column('float')
+    saturatedFat: number;
+
+    @Column('float')
+    sugar: number;
+
+    @Column('float')
+    sodium: number;
+
+    @Column({ nullable: true, default: "A" })
+    nutriScore?: string;
+
 
     @ManyToOne(() => Categoria, (categoria) => categoria.produto, {
-       onDelete: "CASCADE"
+    onDelete: "CASCADE"
     })
     categoria: Categoria;
 
