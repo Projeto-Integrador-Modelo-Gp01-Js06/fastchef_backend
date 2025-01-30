@@ -23,19 +23,23 @@ export class Produto {
     @Column({length: 500, nullable: false})
     foto: string
 
-    @Column('float')
+    @IsPositive()
+    @Column({ type: "float", default: 0 })
     calories: number;
 
-    @Column('float')
+    @IsPositive()
+    @Column({ type: "float", default: 0 })
     saturatedFat: number;
 
-    @Column('float')
+    @IsPositive()
+    @Column({ type: "float", default: 0 })
     sugar: number;
 
-    @Column('float')
+    @IsPositive()
+    @Column({ type: "float", default: 0 })
     sodium: number;
 
-    @Column({ nullable: true, default: "A" })
+    @Column({ nullable: true, default: "0" })
     nutriScore?: string;
 
 
