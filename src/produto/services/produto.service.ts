@@ -109,10 +109,10 @@ export class ProdutoService {
         let score = 0;
     
         // Regras básicas para cálculo do Nutri-Score
-        score += produto.calories > 500 ? 10 : 0;
-        score += produto.saturatedFat > 5 ? 10 : 0;
-        score += produto.sugar > 10 ? 10 : 0;
-        score += produto.sodium > 600 ? 10 : 0;
+        score += produto.calorias > 500 ? 10 : 0;
+        score += produto.gorduraSaturada > 5 ? 10 : 0;
+        score += produto.acucar > 10 ? 10 : 0;
+        score += produto.sodio > 600 ? 10 : 0;
     
         // Classificação final baseada no score acumulado
         if (score <= 3) return 'A - Produto muito saudável! Ótima escolha para sua alimentação.';

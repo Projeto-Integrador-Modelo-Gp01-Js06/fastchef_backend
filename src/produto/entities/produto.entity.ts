@@ -32,22 +32,22 @@ export class Produto {
     @ApiProperty()
     @IsPositive()
     @Column({ type: "float", default: 0 })
-    calories: number;
+    calorias: number;
 
     @ApiProperty()
     @IsPositive()
     @Column({ type: "float", default: 0 })
-    saturatedFat: number;
+    gorduraSaturada: number;
 
     @ApiProperty()
     @IsPositive()
     @Column({ type: "float", default: 0 })
-    sugar: number;
+    acucar: number;
 
     @ApiProperty()
     @IsPositive()
     @Column({ type: "float", default: 0 })
-    sodium: number;
+    sodio: number;
 
     @ApiProperty()
     @Column({ nullable: true, default: "0" })
