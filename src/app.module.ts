@@ -4,6 +4,7 @@ import { ProdutoModule } from './produto/produto.module';
 import { AppService } from './app.service';
 import { CategoriaModule } from './categoria/categoria.module';
 import { UsuarioModule } from './usuario/usuario.module';
+import { AppController } from './app.controller';
 
 @Module({
   imports: [
@@ -22,7 +23,7 @@ import { UsuarioModule } from './usuario/usuario.module';
     CategoriaModule,
     UsuarioModule
   ],
-  controllers: [],
+  controllers: [AppController],
   providers: [],
 })
 export class AppModule {}
