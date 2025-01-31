@@ -7,9 +7,9 @@ async function bootstrap() {
   const app = await NestFactory.create(AppModule);
 
   const config = new DocumentBuilder()
-  .setTitle('Blog Pessoal')
-  .setDescription('Projeto Blog Pessoal')
-  .setContact("Generation Brasil","http://www.generationbrasil.online","generation@email.com")
+  .setTitle('FastChef')
+  .setDescription('Projeto FastChef - Grupo 01 - Turma JavaScript06 - Generation Brasil')
+  .setContact("Contatos - Grupo 01","https://github.com/orgs/Projeto-Integrador-Modelo-Gp01-Js06/repositories","grupo01.turma.javascript06@gmail.com")
   .setVersion('1.0')
   .addBearerAuth()
   .build();
