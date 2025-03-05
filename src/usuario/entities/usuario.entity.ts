@@ -32,6 +32,10 @@ export class Usuario {
     @ApiProperty()
     foto: string
 
+    @Column({ type: 'boolean', default: false })
+    @ApiProperty()
+    admin: boolean
+
     @ApiProperty()
     @OneToMany(() => Produto, (produto) => produto.usuario)
     produto: Produto[]

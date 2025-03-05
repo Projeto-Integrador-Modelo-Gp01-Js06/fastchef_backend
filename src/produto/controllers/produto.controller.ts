@@ -41,18 +41,21 @@ export class ProdutoController {
       return this.produtoService.findMenorPreco(menor);
   }
 
+  @UseGuards(JwtAuthGuard)
   @Post()
   @HttpCode(HttpStatus.CREATED)
   create(@Body() produto: Produto): Promise<Produto> {
     return this.produtoService.create(produto);
   }
 
+  @UseGuards(JwtAuthGuard)
   @Put()
   @HttpCode(HttpStatus.OK)
   update(@Body() produto: Produto): Promise<Produto> {
     return this.produtoService.update(produto);
   }
 
+  @UseGuards(JwtAuthGuard)
   @Delete('/:id')
   @HttpCode(HttpStatus.NO_CONTENT)
   delete(@Param('id', ParseIntPipe) id: number){
