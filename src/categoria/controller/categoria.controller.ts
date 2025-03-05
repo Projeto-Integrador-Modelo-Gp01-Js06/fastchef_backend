@@ -5,7 +5,6 @@ import { JwtAuthGuard } from "../../auth/guard/jwt-auth.guard";
 import { ApiBearerAuth, ApiTags } from "@nestjs/swagger";
 
 @ApiTags('Categoria')
-@UseGuards(JwtAuthGuard)
 @Controller("/categoria")
 @ApiBearerAuth()
 export class CategoriaController {
