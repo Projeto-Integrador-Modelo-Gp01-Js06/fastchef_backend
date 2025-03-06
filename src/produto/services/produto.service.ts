@@ -115,10 +115,10 @@ export class ProdutoService {
         score += produto.sodio > 600 ? 10 : 0;
     
         // Classificação final baseada no score acumulado
-        if (score <= 3) return 'A - Produto muito saudável! Ótima escolha para sua alimentação.';
-        if (score <= 10) return 'B - Produto saudável, mas consuma com equilíbrio.';
-        if (score <= 20) return 'C - Produto moderado, fique atento ao consumo frequente.';
-        if (score <= 30) return 'D - Produto pouco saudável, prefira opções mais equilibradas.';
-        return 'E - Produto não saudável, evite o consumo excessivo.';
+        if (score <= 3) return 'A';
+        if (score <= 10) return 'B';
+        if (score <= 20) return 'C';
+        if (score <= 30) return 'D';
+        return 'E';
     }
 }
